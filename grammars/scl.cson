@@ -175,6 +175,16 @@ patterns: [
       end: '\"'
       name: 'entity.name.function.scl'
     }
+    
+    {
+      #variable or instance
+      begin: '(#)'
+      end: '\\.|\\(|\\ '
+      endCaptures:
+        0:
+          name: 'syntax.none.scl'
+      name: 'support.variable.scl'
+    }
 
     {
       #numeric functions
