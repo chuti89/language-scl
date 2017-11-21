@@ -1,0 +1,51 @@
+'.source.scl':
+  # Basic Functions
+  'MC_Power':
+    'prefix': 'mc_pow'
+    'body': '"${1:_instance-name_}"(Axis:=${2:_param_fb_in_}, \n\tEnable:=${3:_bool_in_},
+    \n\tStartMode:=${4:_dint_in_}, \n\tStopMode:=${5:_int_in_},
+    \n\tStatus=>${6:_bool_out_}, \n\tBusy=>${7:_bool_out_}, \n\tError=>${8:_bool_out_}, \n\tErrorID=>${9:_word_out_});'
+    'description' : 'Enable, disable technology object'
+  'MC_Reset':
+    'prefix': 'mc_res'
+    'body': '"${1:_instance-name_}"(Axis:=${2:_param_fb_in_}, \n\tExecute:=${3:_bool_in_},
+    \n\tDone=>${4:_bool_out_}, \n\tBusy=>${5:_bool_out_}, \n\tCommandAborted=>${6:_bool_out_}, \n\tError=>${7:_bool_out_}, \n\tErrorID=>${8:_word_out_});'
+    'description' : 'Acknowledge alarms, restart technology object'
+  'MC_Home':
+    'prefix': 'mc_hom'
+    'body': '"${1:_instance-name_}"(Axis:=${2:_param_fb_in_}, \n\tExecute:=${3:_bool_in_},
+    \n\tPosition:=${4:_lreal_in_}, \n\tMode:=${5:_int_in_}, \n\tReferenceMarkPosition=>${6:_lreal_out_},
+    \n\tBusy=>${7:_bool_out_}, \n\tDone=>${8:_bool_out_}, \n\tCommandAborted=>${9:_bool_out_}, \n\tError=>${10:_bool_out_}, \n\tErrorID=>${11:_word_out_});'
+    'description' : 'Home technology object, set home position'
+  'MC_Halt':
+    'prefix': 'mc_halt'
+    'body': '"${1:_instance-name_}"(Axis:=${2:_param_fb_in_}, \n\tExecute:=${3:_bool_in_},
+    \n\tDeceleration:=${4:_lreal_in_}, \n\tJerk:=${5:_lreal_in_}, \n\tAbortAcceleration:=${6:_bool_in_},
+    \n\tBusy=>${7:_bool_out_}, \n\tDone=>${8:_bool_out_}, \n\tCommandAborted=>${9:_bool_out_}, \n\tError=>${10:_bool_out_}, \n\tErrorID=>${11:_word_out_});'
+    'description' : 'Home technology object, set home position'
+  # Servo positioning functions
+  'MC_MoveAbsolute':
+    'prefix': 'mc_abs'
+    'body': '"${1:_instance-name_}"(Axis:=${2:_param_fb_in_}, \n\tExecute:=${3:_bool_in_},
+    \n\tPosition:=${4:_lreal_in_}, \n\tVelocity:=${5:_lreal_in_}, \n\tAcceleration:=${6:_lreal_in_}, \n\tDeceleration:=${7:_lreal_in_}, \n\tJerk:=${8:_lreal_in_}, \n\tDirection:=${9:_int_in_},
+    \n\tDone=>${10:_bool_out_}, \n\tBusy=>${11:_bool_out_}, \n\tCommandAborted=>${12:_bool_out_}, \n\tError=>${13:_bool_out_}, \n\tErrorID=>${14:_word_out_});'
+    'description' : 'Position axis absolutely'
+  'MC_MoveRelative':
+    'prefix': 'mc_rel'
+    'body': '"${1:_instance-name_}"(Axis:=${2:_param_fb_in_}, \n\tExecute:=${3:_bool_in_},
+    \n\tDistance:=${4:_lreal_in_}, \n\tVelocity:=${5:_lreal_in_}, \n\tAcceleration:=${6:_lreal_in_}, \n\tDeceleration:=${7:_lreal_in_}, \n\tJerk:=${8:_lreal_in_},
+    \n\tDone=>${9:_bool_out_}, \n\tBusy=>${10:_bool_out_}, \n\tCommandAborted=>${11:_bool_out_}, \n\tError=>${12:_bool_out_}, \n\tErrorID=>${13:_word_out_});'
+    'description' : 'Position axis relatively'
+  # Velocity control functions
+  'MC_MoveVelicity':
+    'prefix': 'mc_vel'
+    'body': '"${1:_instance-name_}"(Axis:=${2:_param_fb_in_}, \n\tExecute:=${3:_bool_in_},
+    \n\tVelocity:=${4:_lreal_in_}, \n\tAcceleration:=${5:_lreal_in_}, \n\tDeceleration:=${6:_lreal_in_}, \n\tJerk:=${7:_lreal_in_}, \n\tDirection:=${8:_int_in_}, \n\tCurrent:=${9:_int_in_}, \n\tPositionControlled:=${10:_int_in_}, \n\tInVelocity:=>${11:_bool_out_},
+    \n\tBusy=>${12:_bool_out_}, \n\tCommandAborted=>${13:_bool_out_}, \n\tError=>${14:_bool_out_}, \n\tErrorID=>${15:_word_out_});'
+    'description' : 'Move axis with velicity speed setpoint'
+  'MC_MoveJog':
+    'prefix': 'mc_jog'
+    'body': '"${1:_instance-name_}"(Axis:=${2:_param_fb_in_}, \n\tJogForward:=${3:_bool_in_}, \n\tJogBackward:=${4:_bool_in_},
+    \n\tVelocity:=${5:_lreal_in_}, \n\tAcceleration:=${6:_lreal_in_}, \n\tDeceleration:=${7:_lreal_in_}, \n\tJerk:=${8:_lreal_in_}, \n\tCurrent:=${9:_int_in_}, \n\tPositionControlled:=${10:_int_in_}, \n\tInVelocity:=>${11:_bool_out_},
+    \n\tBusy=>${12:_bool_out_}, \n\tCommandAborted=>${13:_bool_out_}, \n\tError=>${14:_bool_out_}, \n\tErrorID=>${15:_word_out_});'
+    'description' : 'Move axis with velicity speed setpoint'
