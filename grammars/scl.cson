@@ -179,7 +179,7 @@ patterns: [
     {
       #variable or instance
       begin: '(#)'
-      end: '\\.|\\(|\\ '
+      end: '\\.|\\,|\\(|\\);|\\(|\\ '
       endCaptures:
         0:
           name: 'syntax.none.scl'
